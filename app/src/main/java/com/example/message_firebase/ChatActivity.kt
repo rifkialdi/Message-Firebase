@@ -70,6 +70,8 @@ class ChatActivity : AppCompatActivity() {
                     dataChatting.add(message!!)
                 }
                 messageAdapter.notifyDataSetChanged()
+                /* agar chattingan nya selalu scrool ke bawah (yang terbaru)  */
+                binding.idrvChat.scrollToPosition(dataChatting.size-1)
             }
 
             override fun onCancelled(error: DatabaseError) {
