@@ -60,7 +60,8 @@ class SignupActivity : AppCompatActivity() {
             if (task.isSuccessful) {
                 addUserToRealtime(name, email, password)
                 toastMessage("Berhasil Daftar")
-                Intent(this, HomeUserActivity::class.java).also {
+                fAuth.signOut()
+                Intent(this, SigninActivity::class.java).also {
                     it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     startActivity(it)
                 }
